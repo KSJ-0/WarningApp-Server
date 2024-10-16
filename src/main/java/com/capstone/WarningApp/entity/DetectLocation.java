@@ -6,6 +6,7 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 
 @Entity
 @AllArgsConstructor
@@ -24,6 +25,9 @@ public class DetectLocation {
 
     @Column(nullable = false)
     private Double longitude; //경도
+
+    @Column(nullable = false)
+    private LocalDateTime createdAt;
 
 //    @OneToOne
 //    @JoinColumn(name = "detectObject_id")

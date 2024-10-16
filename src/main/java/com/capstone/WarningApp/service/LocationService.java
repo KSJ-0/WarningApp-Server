@@ -9,6 +9,8 @@ import com.capstone.WarningApp.repository.LocationRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
+
 @Service
 @AllArgsConstructor
 public class LocationService {
@@ -16,6 +18,7 @@ public class LocationService {
     private final LocationMapper locationMapper;
 
     public DetectLocation createDetectLocation(DetectLocationDto.DetectLocationPost detectLocationPost) {
+        detectLocationPost.setCreatedAt(LocalDateTime.now());
         return locationRepository.save(locationMapper.toDetectLocation(detectLocationPost));
     }
 

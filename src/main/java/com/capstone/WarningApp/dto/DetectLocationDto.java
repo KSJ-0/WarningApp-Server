@@ -3,6 +3,8 @@ package com.capstone.WarningApp.dto;
 import lombok.Getter;
 import lombok.Setter;
 
+import java.time.LocalDateTime;
+
 @Getter
 @Setter
 public class DetectLocationDto {
@@ -12,6 +14,7 @@ public class DetectLocationDto {
     public static class DetectLocationPost {
         private Double latitude; //위도
         private Double longitude; //경도
+        private LocalDateTime createdAt;
     }
 
     @Getter
@@ -19,6 +22,7 @@ public class DetectLocationDto {
     public static class DetectLocationResponse {
         private Double latitude; //위도
         private Double longitude; //경도
+        private LocalDateTime createdAt;
     }
 
 }
